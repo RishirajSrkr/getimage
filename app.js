@@ -1,3 +1,4 @@
+require('dotenv').config()
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -7,7 +8,7 @@ const expressSession = require("express-session");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const passport = require('passport');
-
+const { log } = require('console');
 var app = express();
 
 // view engine setup
