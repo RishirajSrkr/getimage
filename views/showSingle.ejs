@@ -1,0 +1,12 @@
+<% include ./partials/header.ejs %>
+    <div class="flex justify-center bg-slate-50 h-full items-center px-10 py-4 text-black gap-10">
+        <div class="w-96 h-96">
+            <img class="object-cover w-full h-full" src="/images/uploads/<%=post.image%>" alt="">
+        </div>
+        <div  class="w-[35vw]">
+            <h3 class="text-3xl font-semibold"><%=post.title%></h3>
+            <p class="mt-5"><%=post.description%></p>
+            <p class="text-xs font-semibold mt-5" >@<%=post.user.username%></p>
+        </div>
+    </div>
+    <% include ./partials/footer.ejs %>

@@ -1,0 +1,55 @@
+<% include ./partials/header.ejs%>
+
+    <div class="profile w-full min-h-screen bg-slate-50 pt-1">
+
+        <form id="uploadForm" hidden action="/fileupload" method="post" enctype="multipart/form-data">
+            <input type="file" name="image">
+        </form>
+        <div class="profile-details flex flex-col items-center justify-center mt-20">
+
+            <div class="relative">
+                <span id="uploadIcon"
+                    class="w-10 h-10 absolute bottom-0 right-0 rounded-full flex items-center justify-center bg-zinc-200 cursor-pointer">
+                    <i class="text-zinc-800  ri-pencil-line"></i>
+                </span>
+                <div class="w-32 h-32 bg-zinc-200 rounded-full overflow-hidden">
+                    <img class="w-full h-full object-cover"
+                        src="/images/uploads/<%=user.profileImage%>"
+                        alt="profile image">
+                </div>
+            </div>
+
+            <h1 class="mt-4 text-2xl font-semibold"><%=user.name%></h1>
+            <h3 class="text-md">@<%=user.username%></h3>
+            <a href="/add" class="px-8 py-3 bg-red-600 rounded-full text-xs font-semibold mt-10 text-white">Add New Post</a>
+        </div>
+
+
+        <div class="cards flex flex-wrap gap-5 px-10 mt-10">
+            <div class="card">
+
+
+                <div class="w-52 h-40 bg-zinc-500 rounded-lg overflow-hidden">
+                    <img class="w-full h-full object-cover"
+                        src="/images/uploads/<%=user.posts[user.posts.length-1]?.image%>"
+                        alt="">
+                </div>
+                <a href="/show/posts" class="inline-block text-xl font-semibold mt-3">My Uploaded Pins</a>
+                <h5 class="text-sm font-medium opacity-60"><%=user.posts.length%> Pins</h5>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.querySelector('#uploadIcon').addEventListener('click', function () {
+            document.querySelector('#uploadForm input').click();
+        })
+
+        document.querySelector('#uploadForm input').addEventListener('change', function () {
+            //it means if a new file is being selected
+            document.querySelector('#uploadForm').submit();
+        })
+    </script>
+
+    <% include ./partials/footer.ejs%>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <% if(nav===true){ %>
+    <div class="w-full h-[10vh] px-10 py-3 flex justify-between items-center bg-slate-50 fixed top-0 border-b-2 border-gray-200">
+      <h3>Pinterest</h3>
+      <div class="flex gap-10 items-center">
+        <a href="/profile">Profile</a>
+        <a href="/feed">Feed</a>
+        <a class="px-5 py-2 bg-red-600 text-white rounded-full" href="/logout">Logout</a>
+      </div>
+    </div>
+    <%} %>

@@ -1,0 +1,27 @@
+<% include ./partials/header.ejs%>
+
+    <div
+        class="w-full h-screen bg-slate-50 px-10 py-40 text-white flex justify-center items-center">
+
+        <form
+            class="flex flex-col gap-2 text-black w-112 backdrop-blur-2xl text-black border-2 rounded-2xl px-5 py-5 "
+            action="/createpost" method="post" enctype="multipart/form-data">
+            <input class="block w-full px-4 py-2 outline-none
+        file:mr-4 file:py-2 file:px-4
+      file:rounded-full file:border-0
+      file:text-sm file:font-semibold
+      file:bg-black file:text-slate-50
+      cursor-pointer" type="file" name="postimage">
+            <input
+                class="border-2 mt-5 block w-full px-4 py-2 outline-none bg-transparent"
+                type="text" placeholder="title" name="title">
+            <textarea
+                class="border-2 mb-5 block w-full px-4 py-2 outline-none h-60 resize-none bg-transparent"
+                type="text" placeholder="description" name="description"></textarea>
+            <input class="block w-full bg-red-600 px-4 py-2 rounded-lg text-white " type="submit" value="Create Post">
+        </form>
+
+
+    </div>
+
+    <% include ./partials/footer.ejs%>
