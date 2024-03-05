@@ -13,11 +13,11 @@ router.get('/', function (req, res, next) {
   res.render('index', { nav: false });
 });
 
-router.get('/register', function (req, res) {
+router.get('https://getimage-nine.vercel.app/register', function (req, res) {
   res.render('register', { nav: false })
 })
 
-router.get('/profile', isLoggedIn, async function (req, res) {
+router.get('https://getimage-nine.vercel.app/profile', isLoggedIn, async function (req, res) {
   const user = await userModel
     .findOne({ username: req.session.passport.user })
     .populate("posts")
