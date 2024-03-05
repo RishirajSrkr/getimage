@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("URL")
-// mongoose.connect(process.env.URL)
+// mongoose.connect("mongodb://127.0.0.1:27017/pinterest")
+
+mongoose.connect(process.env.URL || "mongodb://127.0.0.1:27017/pinterest");
 
 const plm = require('passport-local-mongoose');
  

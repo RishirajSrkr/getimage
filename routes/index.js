@@ -55,7 +55,7 @@ router.get('/feed', isLoggedIn, async function (req, res) {
   const posts = await postModel.find()
     .limit(25)
     .populate('user')
-  console.log(posts);
+  // console.log(posts);
   res.render('feed', { user, posts, nav: true })
 })
 
@@ -94,7 +94,7 @@ router.post('/register', function (req, res) {
     contact: req.body.contact,
     name: req.body.fullname,
   })
-  console.log(userData);
+  // console.log(userData);
 
   userModel.register(userData, req.body.password)
     .then(function () {
